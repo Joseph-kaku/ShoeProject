@@ -1,6 +1,6 @@
 const routes = require('express').Router();
 
-const controllers = require('../controllers/controller')
+const controllers = require('../controllers/owner')
 
 routes.get('/', controllers.getAllOwners)
 
