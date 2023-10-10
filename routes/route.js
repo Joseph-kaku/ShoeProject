@@ -1,8 +1,8 @@
 const routes = require('express').Router();
 
-const controllers = require('../controllers/controller')
 
-routes.get('/', controllers.getAll)
-routes.get('/:id', controllers.getSingle)
+routes.use('/shoes', require('./shoes'))
+routes.use('/owners', require('./owners'))
+// routes.get('/:id', controllers.getSingle)
 
 module.exports = routes
