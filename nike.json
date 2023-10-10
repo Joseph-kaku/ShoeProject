@@ -1,0 +1,82 @@
+[
+    {
+        "brand": "Nike",
+        "model": "Nike Air Force 1",
+        "color": "White",
+        "secondary_color": "Black",
+        "size": "10",
+        "lace_color": "White",
+        "price": "$90.00",
+        "logo_name": "Swoosh"
+    },
+    {
+        "brand": "Nike",
+        "model": "Nike Air Max 90",
+        "color": "Black",
+        "secondary_color": "Red",
+        "size": "9.5",
+        "lace_color": "Black",
+        "price": "$120.00",
+        "logo_name": "Swoosh"
+    },
+    {
+        "brand": "Nike",
+        "model": "Nike React Element 55",
+        "color": "Blue",
+        "secondary_color": "White",
+        "size": "11",
+        "lace_color": "Blue",
+        "price": "$130.00",
+        "logo_name": "Swoosh"
+    },
+    {
+        "brand": "Nike",
+        "model": "Nike Air Jordan 1",
+        "color": "Red",
+        "secondary_color": "Black",
+        "size": "10.5",
+        "lace_color": "Red",
+        "price": "$170.00",
+        "logo_name": "Jumpman"
+    },
+    {
+        "brand": "Nike",
+        "model": "Nike Air Max 97",
+        "color": "Silver",
+        "secondary_color": "Black",
+        "size": "9",
+        "lace_color": "White",
+        "price": "$160.00",
+        "logo_name": "Swoosh"
+    },
+    {
+        "brand": "Nike",
+        "model": "Nike React Infinity Run",
+        "color": "Grey",
+        "secondary_color": "Orange",
+        "size": "8.5",
+        "lace_color": "Grey",
+        "price": "$150.00",
+        "logo_name": "Swoosh"
+    },
+    {
+        "brand": "Nike",
+        "model": "Nike Air Presto",
+        "color": "Blue",
+        "secondary_color": "White",
+        "size": "11",
+        "lace_color": "Blue",
+        "price": "$120.00",
+        "logo_name": "Swoosh"
+    },
+    {
+        "brand": "Nike",
+        "model": "Nike Zoom Fly",
+        "color": "Black",
+        "secondary_color": "Neon Green",
+        "size": "10.5",
+        "lace_color": "Black",
+        "price": "$150.00",
+        "logo_name": "Swoosh"
+    }
+]

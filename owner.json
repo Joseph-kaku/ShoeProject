@@ -1,0 +1,34 @@
+[
+    {
+        "person": "Luke Evans",
+        "collector": "No"
+    },
+    {
+        "person": "John Jons",
+        "collector": "Yes"
+    },
+    {
+        "person": "Liz Kaku",
+        "collector": "No"
+    },
+    {
+        "person": "McBrian Poku",
+        "collector": "Yes"
+    },
+    {
+        "person": "Max Aquah",
+        "collector": "Yes"
+    },
+    {
+        "person": "Chris Evans",
+        "collector": "No"
+    },
+    {
+        "person": "Samwise Gamgee",
+        "collector": "No"
+    },
+    {
+        "person": "Joseph Kaku",
+        "collector": "Yes"
+    }
+]
