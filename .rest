@@ -40,3 +40,12 @@ GET https://shoeproject.onrender.com/shoes HTTP/1.1
 
 ### Get all owners render
 GET https://shoeproject.onrender.com/owners HTTP/1.1
+
+
+### Get one shoe render
+
+### Get one owner render
+
+### Add new shoe render
+
+### Add new owner render
