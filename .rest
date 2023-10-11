@@ -1,3 +1,5 @@
+###LOCAL
+
 ### Get all shoes local
 GET http://localhost:8080/shoes HTTP/1.1
 
@@ -32,7 +34,7 @@ Content-Type: application/json
     "collector": "Yes"
 }
 
-
+###RENDER
 
 
 ### Get all shoes render
@@ -47,5 +49,25 @@ GET https://shoeproject.onrender.com/owners HTTP/1.1
 ### Get one owner render
 
 ### Add new shoe render
+POST https://shoeproject.onrender.com/shoes HTTP/1.1
+Content-Type: application/json
+
+{
+    "brand": "Nike",
+    "model": "Travis Scott",
+    "color": "Brown",
+    "secondary_color": "White",
+    "size": "10",
+    "lace_color": "Black",
+    "price": "$900.00",
+    "logo_name": "Swoosh"
+}
 
 ### Add new owner render
+POST https://shoeproject.onrender.com/owners HTTP/1.1
+Content-Type: application/json
+
+{
+    "person": "CPT Price",
+    "collector": "No"
+}
