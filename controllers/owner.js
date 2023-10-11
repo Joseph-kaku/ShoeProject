@@ -9,7 +9,20 @@ const getAllOwners = async (req, res) => {
     });
 };
 
+const addNewOwner = async (req, res) => {
+    const newOwner = {
+        person: req.body.person,
+        collector: req.body.collector,
+    };
+    const response = await mongodb.getDb().db().collection('owner').insertOne(newOwner);
+    if (response.acknowledged) {
+        res.status(201).json(response);
+    } else {
+        res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+    }
+}
 
 module.exports = {
-    getAllOwners
+    getAllOwners,
+    addNewOwner
 }; 

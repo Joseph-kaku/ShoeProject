@@ -1,6 +1,6 @@
 const routes = require('express').Router();
 
-
+// routes.use('/', require())
 routes.use('/shoes', require('./shoes'))
 routes.use('/owners', require('./owners'))
 
