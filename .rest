@@ -1,0 +1,6 @@
+### Get all shoes local
+GET http://localhost:8080/shoes HTTP/1.1
+
+### Get all owners local
+GET http://localhost:8080/owners HTTP/1.1
+
