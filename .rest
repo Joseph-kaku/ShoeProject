@@ -36,11 +36,35 @@ Content-Type: application/json
     "collector": "Yes"
 }
 
+### Edit shoe local
+PUT http://localhost:8080/shoes/65262c0035fc4b1c664d079a HTTP/1.1
+Content-Type: application/json
+
+{
+    "brand": "Nike",
+    "model": "Travis Scott",
+    "color": "Brown",
+    "secondary_color": "White",
+    "size": "10",
+    "lace_color": "Black",
+    "price": "$900.00",
+    "logo_name": "NOT Swoosh"
+}
+
+### Edit owner local
+PUT http://localhost:8080/owners/65262c2335fc4b1c664d079b HTTP/1.1
+Content-Type: application/json
+
+{
+    "person": "Sam Mason",
+    "collector": "Yes"
+}
+
 ### DELETE local shoe
-DELETE http://localhost:8080/shoes/65249e2e86c3054d8443c866 HTTP/1.1
+DELETE http://localhost:8080/shoes/ HTTP/1.1
 
 ### DELETE local owner
-DELETE http://localhost:8080/owners/65249e2186c3054d8443c860 HTTP/1.1
+DELETE http://localhost:8080/owners/ HTTP/1.1
 
 
 
@@ -77,6 +101,30 @@ Content-Type: application/json
 
 ### Add new owner render
 POST https://shoeproject.onrender.com/owners HTTP/1.1
+Content-Type: application/json
+
+{
+    "person": "CPT Price",
+    "collector": "No"
+}
+
+### Edit render shoe
+PUT https://shoeproject.onrender.com/shoes/65262c0035fc4b1c664d079a HTTP/1.1
+Content-Type: application/json
+
+{
+    "brand": "Nike",
+    "model": "Travis Scott",
+    "color": "Brown",
+    "secondary_color": "White",
+    "size": "10",
+    "lace_color": "Black",
+    "price": "$900.00",
+    "logo_name": "Swoosh"
+}
+
+### Edit render owner
+PUT https://shoeproject.onrender.com/owners/65262c2335fc4b1c664d079b HTTP/1.1
 Content-Type: application/json
 
 {
