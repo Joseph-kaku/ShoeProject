@@ -31,8 +31,29 @@ const addNewOwner = async (req, res) => {
     }
 }
 
+const updateOwner = async (req, res) => {
+    const userId = new ObjectId(req.params.id);
+    // be aware of updateOne if you only want to update specific fields
+    const contact = {
+        person: req.body.person,
+        collector: req.body.collector
+    };
+    const response = await mongodb
+    .getDb()
+    .db()
+    .collection('owner')
+    .replaceOne({ _id: userId }, contact);
+    console.log(response);
+    if (response.modifiedCount > 0) {
+    res.status(204).send();
+    } else {
+    res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+    }
+};
+
 module.exports = {
     getAllOwners,
     addNewOwner,
-    getSingleOwner
+    getSingleOwner,
+    updateOwner
 }; 

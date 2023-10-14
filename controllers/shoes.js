@@ -37,10 +37,35 @@ const addNewShoe = async (req, res) => {
     }
 }
 
-
+const updateShoe = async (req, res) => {
+    const userId = new ObjectId(req.params.id);
+    // be aware of updateOne if you only want to update specific fields
+    const contact = {
+        brand: req.body.brand,
+        model: req.body.model,
+        color: req.body.color,
+        secondary_color: req.body.secondary_color,
+        size: req.body.size,
+        lace_color: req.body.lace_color,
+        price: req.body.price,
+        logo_name: req.body.logo_name
+    };
+    const response = await mongodb
+    .getDb()
+    .db()
+    .collection('shoes')
+    .replaceOne({ _id: userId }, contact);
+    console.log(response);
+    if (response.modifiedCount > 0) {
+    res.status(204).send();
+    } else {
+    res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+    }
+};
 
 module.exports = {
     getAllShoes,
     addNewShoe,
-    getSingleShoe
+    getSingleShoe,
+    updateShoe
 }; 
