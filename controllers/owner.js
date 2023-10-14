@@ -51,7 +51,7 @@ const updateOwner = async (req, res) => {
     }
 };
 
-const deleteContact = async (req, res) => {
+const deleteOwner = async (req, res) => {
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('owner').deleteOne({ _id: userId }, true);
     console.log(response);
@@ -66,5 +66,6 @@ module.exports = {
     getAllOwners,
     addNewOwner,
     getSingleOwner,
-    updateOwner
+    updateOwner,
+    deleteOwner
 }; 

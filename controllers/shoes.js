@@ -63,7 +63,7 @@ const updateShoe = async (req, res) => {
     }
 };
 
-const deleteContact = async (req, res) => {
+const deleteShoe = async (req, res) => {
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('shoes').deleteOne({ _id: userId }, true);
     console.log(response);
@@ -78,5 +78,6 @@ module.exports = {
     getAllShoes,
     addNewShoe,
     getSingleShoe,
-    updateShoe
+    updateShoe,
+    deleteShoe
 }; 

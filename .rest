@@ -37,10 +37,10 @@ Content-Type: application/json
 }
 
 ### DELETE local shoe
-DELETE http://localhost:8080/ HTTP/1.1
+DELETE http://localhost:8080/shoes/65249e2e86c3054d8443c866 HTTP/1.1
 
 ### DELETE local owner
-DELETE http://localhost:8080/ HTTP/1.1
+DELETE http://localhost:8080/owners/65249e2186c3054d8443c860 HTTP/1.1
 
 
 
@@ -83,3 +83,9 @@ Content-Type: application/json
     "person": "CPT Price",
     "collector": "No"
 }
+
+### DELETE render shoe
+DELETE https://shoeproject.onrender.com/shoes/ HTTP/1.1
+
+### DELETE render owner
+DELETE https://shoeproject.onrender.com/owners/ HTTP/1.1
