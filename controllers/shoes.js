@@ -63,6 +63,17 @@ const updateShoe = async (req, res) => {
     }
 };
 
+const deleteContact = async (req, res) => {
+    const userId = new ObjectId(req.params.id);
+    const response = await mongodb.getDb().db().collection('shoes').deleteOne({ _id: userId }, true);
+    console.log(response);
+    if (response.deletedCount > 0) {
+    res.status(204).send();
+    } else {
+    res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
+    }
+};
+
 module.exports = {
     getAllShoes,
     addNewShoe,

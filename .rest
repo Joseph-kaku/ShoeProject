@@ -36,6 +36,12 @@ Content-Type: application/json
     "collector": "Yes"
 }
 
+### DELETE local shoe
+DELETE http://localhost:8080/ HTTP/1.1
+
+### DELETE local owner
+DELETE http://localhost:8080/ HTTP/1.1
+
 
 
 ###RENDER
