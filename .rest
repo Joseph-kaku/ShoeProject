@@ -133,7 +133,7 @@ Content-Type: application/json
 }
 
 ### DELETE render shoe
-DELETE https://shoeproject.onrender.com/shoes/ HTTP/1.1
+DELETE https://shoeproject.onrender.com/shoes/65288c2a8e620fe225430cfd HTTP/1.1
 
 ### DELETE render owner
-DELETE https://shoeproject.onrender.com/owners/ HTTP/1.1
+DELETE https://shoeproject.onrender.com/owners/65262c2335fc4b1c664d079b HTTP/1.1
