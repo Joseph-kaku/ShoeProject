@@ -9,6 +9,15 @@ const getAllShoes = async (req, res) => {
     });
 };
 
+const getSingleShoe = async (req, res) => {
+    const userId = new ObjectId(req.params.id);
+    const result = await mongodb.getDb().db().collection('shoes').find({ _id: userId });
+    result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]);
+    });
+};
+
 const addNewShoe = async (req, res) => {
     const newShoe = {
         brand: req.body.brand,
@@ -32,5 +41,6 @@ const addNewShoe = async (req, res) => {
 
 module.exports = {
     getAllShoes,
-    addNewShoe
+    addNewShoe,
+    getSingleShoe
 }; 

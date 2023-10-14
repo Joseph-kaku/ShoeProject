@@ -7,8 +7,10 @@ GET http://localhost:8080/shoes HTTP/1.1
 GET http://localhost:8080/owners HTTP/1.1
 
 ### Get one shoe local
+GET http://localhost:8080/shoes/65249e2e86c3054d8443c865 HTTP/1.1
 
 ### Get one owner local 
+GET http://localhost:8080/owners/65249e2186c3054d8443c85e HTTP/1.1
 
 ### Add new shoe local
 POST http://localhost:8080/shoes HTTP/1.1
@@ -45,8 +47,10 @@ GET https://shoeproject.onrender.com/owners HTTP/1.1
 
 
 ### Get one shoe render
+GET https://shoeproject.onrender.com/shoes/65249e2e86c3054d8443c865  HTTP/1.1
 
 ### Get one owner render
+GET https://shoeproject.onrender.com/owners/65249e2186c3054d8443c85e HTTP/1.1
 
 ### Add new shoe render
 POST https://shoeproject.onrender.com/shoes HTTP/1.1

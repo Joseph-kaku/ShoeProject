@@ -9,6 +9,15 @@ const getAllOwners = async (req, res) => {
     });
 };
 
+const getSingleOwner = async (req, res) => {
+    const userId = new ObjectId(req.params.id);
+    const result = await mongodb.getDb().db().collection('owner').find({ _id: userId });
+    result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]);
+    });
+};
+
 const addNewOwner = async (req, res) => {
     const newOwner = {
         person: req.body.person,
@@ -24,5 +33,6 @@ const addNewOwner = async (req, res) => {
 
 module.exports = {
     getAllOwners,
-    addNewOwner
+    addNewOwner,
+    getSingleOwner
 }; 
