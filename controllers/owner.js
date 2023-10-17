@@ -1,4 +1,4 @@
-mongodb = require('../db/connect')
+mongodb = require('../utilities/connect')
 const ObjectId = require('mongodb').ObjectId;
 
 const getAllOwners = async (req, res) => {
@@ -19,6 +19,7 @@ const getSingleOwner = async (req, res) => {
 };
 
 const addNewOwner = async (req, res) => {
+    try{
     const newOwner = {
         person: req.body.person,
         collector: req.body.collector,
@@ -28,6 +29,9 @@ const addNewOwner = async (req, res) => {
         res.status(201).json(response);
     } else {
         res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+    }
+} catch{
+        res.status(500).json('a problem occured')
     }
 }
 

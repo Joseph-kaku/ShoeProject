@@ -1,5 +1,6 @@
-mongodb = require('../db/connect')
+mongodb = require('../utilities/connect')
 const ObjectId = require('mongodb').ObjectId;
+const mongoose = require('mongoose');
 
 const getAllShoes = async (req, res) => {
     const result = await mongodb.getDb().db().collection('shoes').find();
