@@ -61,15 +61,15 @@ validate.addNewShoeRules = () => {
 }
 
 // CHECK FOR ERRORS OR ADD TO DB
-// validate.checkShoeData = async (req, res, next) => {
-//     const {brand, model, color, secondary_color, size, lace_color, price, logo_name} = req.body
-//     let errors = []
-//     errors = validationResult(req)
-//     if (!errors.isEmpty()) {
-
-//     }
-//     next()
-// }
+validate.checkShoeData = async (req, res, next) => {
+    const {brand, model, color, secondary_color, size, lace_color, price, logo_name} = req.body
+    let errors = []
+    errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        res.status(400)
+    }
+    next()
+}
 
 
 // ADD NEW OWNER VALIDATION
@@ -86,19 +86,20 @@ validate.addNewOwnerRules = () => {
         body("collector")
         .trim()
         .isAlpha()
+        .isLength({min: 2})
         .withMessage({message:"yes or no please"})
     ]
 }
 
 //  CHECK FOR ERRORS OR ADD TO DB
-// validate.checkOwnerData = async (req, res, next) => {
-//     const {person, collector} = req.body
-//     let errors = []
-//     erros = validationResult(req)
-//     if (!errors.isEmpty()) {
-
-//     }
-//     next()
-// }
+validate.checkOwnerData = async (req, res, next) => {
+    const {person, collector} = req.body
+    let errors = []
+    erros = validationResult(req)
+    if (!errors.isEmpty()) {
+        res.status(400)
+    }
+    next()
+}
 
 module.exports = validate
