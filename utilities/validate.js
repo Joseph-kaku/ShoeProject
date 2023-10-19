@@ -8,99 +8,94 @@ validate.addNewShoeRules = () => {
         // brand name is required and must be a string
         body("brand")
         .trim()
-        .isAlpha()
-        .isLength({min: 4})
-        .withMessage({message:"Please provide a brand name"}),
+        .isString()
+        .isLength({ min: 4 })
+        .withMessage('Please provide a brand name'),
 
         // model name is required and must be a string
         body("model")
         .trim()
-        .isAlpha()
-        .isAlphanumeric()
-        .withMessage({message:"Please provide a model"}), 
+        .isString()
+        .isLength({ min: 1 })
+        .withMessage('Please provide a model'), 
 
         // color is required and must be a string
         body("color")
         .trim()
-        .isAlpha()
-        .isLength({min: 3})
-        .withMessage({message:"Please provide a color"}),
+        .isString()
+        .isLength({ min: 3 })
+        .withMessage('Please provide a color'),
 
         // secondary_color is required and must be a string
         body("secondary_color")
         .trim()
-        .isAlpha()
-        .isLength({min: 3})
-        .withMessage({message: "Please provide a secondary_color"}),
+        .isString()
+        .isLength({ min: 3 })
+        .withMessage('Please provide a secondary color'),
 
         // size is required and must be a string
         body("size")
         .trim()
-        .isAlpha()
-        .isLength({min: 1})
-        .withMessage({message:"Please provide a size"}), 
+        .isString()
+        .isLength({ min: 1 })
+        .withMessage('Please provide a size'), 
 
         // lace_color is required and must be a string
         body("lace_color")
         .trim()
-        .isAlpha()
-        .isLength({min: 3})
-        .withMessage({message:"Please provide a lace color"}),
+        .isString()
+        .isLength({ min: 3 })
+        .withMessage('Please provide a lace color'),
 
         // price is required and must be a string
         body("price")
         .trim()
-        .isAlphanumeric()
-        .withMessage({message:"Please provide a price"}),
+        .isString()
+        .withMessage('Please provide a price'),
 
         // logo name is required and must be a string
         body("logo_name")
         .trim()
-        .isAlpha()
-        .withMessage({message:"Please provide a logo name"})
+        .isString()
+        .withMessage('Please provide a logo name')
     ]
 }
 
-// CHECK FOR ERRORS OR ADD TO DB
+// CHECK FOR ERRORS 
 validate.checkShoeData = async (req, res, next) => {
-    const {brand, model, color, secondary_color, size, lace_color, price, logo_name} = req.body
-    let errors = []
-    errors = validationResult(req)
+    const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        res.status(400)
+        return res.status(400).json({ errors: errors.array() });
     }
-    next()
-}
+    next();
+};
 
 
 // ADD NEW OWNER VALIDATION
 validate.addNewOwnerRules = () => {
     return [
         // Name is required and must be a string
-        body("person")
-        .trim()
-        .isAlpha()
-        .isLength({min: 2})
-        .withMessage({message:"Please provide a name"}),
+        body('person')
+            .trim()
+            .isString()
+            .isLength({ min: 2 })
+            .withMessage('Please provide a name'),
 
         // Provide a yes/no 
-        body("collector")
-        .trim()
-        .isAlpha()
-        .isLength({min: 2})
-        .withMessage({message:"yes or no please"})
+        body('collector')
+            .trim()
+            .isIn(['Yes', 'No'])
+            .withMessage('Please provide "Yes" or "No"')
     ]
 }
 
-//  CHECK FOR ERRORS OR ADD TO DB
+//  CHECK FOR ERRORS 
 validate.checkOwnerData = async (req, res, next) => {
-    const {person, collector} = req.body
-    let errors = []
-    erros = validationResult(req)
+    const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        res.status(400)
+        return res.status(400).json({ errors: errors.array() });
     }
-    next()
-}
+    next();
+};
 
 module.exports = validate
