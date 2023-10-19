@@ -8,7 +8,10 @@ regValidate.addNewOwnerRules(),
 regValidate.checkOwnerData,
 controllers.addNewOwner)
 routes.get('/:id', controllers.getSingleOwner)
-routes.put('/:id', controllers.updateOwner)
+routes.put('/:id',
+regValidate.addNewOwnerRules(), 
+regValidate.checkOwnerData, 
+controllers.updateOwner)
 routes.delete('/:id', controllers.deleteOwner)
 
 module.exports = routes

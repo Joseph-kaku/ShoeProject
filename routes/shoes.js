@@ -7,7 +7,10 @@ routes.post('/',
 regValidate.addNewShoeRules(),
 regValidate.checkShoeData,
 controllers.addNewShoe);
-routes.get('/:id', controllers.getSingleShoe);
+routes.get('/:id',
+regValidate.addNewShoeRules(),
+regValidate.checkShoeData, 
+controllers.getSingleShoe);
 routes.put('/:id', controllers.updateShoe)
 routes.delete('/:id', controllers.deleteShoe)
 
