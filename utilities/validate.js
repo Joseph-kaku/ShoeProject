@@ -56,6 +56,7 @@ validate.shoeRules = () => {
         body("logo_name")
         .trim()
         .isString()
+        .isLength({ min: 3 })
         .withMessage('Please provide a logo name')
     ]
 }
