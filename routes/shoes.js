@@ -7,11 +7,11 @@ routes.post('/',
 regValidate.shoeRules(),
 regValidate.checkShoeData,
 controllers.addNewShoe);
-routes.get('/:id',
+routes.get('/:id', controllers.getSingleShoe);
+routes.put('/:id',
 regValidate.shoeRules(),
-regValidate.checkShoeData, 
-controllers.getSingleShoe);
-routes.put('/:id', controllers.updateShoe)
+regValidate.checkShoeData,
+controllers.updateShoe)
 routes.delete('/:id', controllers.deleteShoe)
 
 module.exports = routes
