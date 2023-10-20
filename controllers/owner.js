@@ -19,7 +19,6 @@ const getSingleOwner = async (req, res) => {
 };
 
 const addNewOwner = async (req, res) => {
-    try{
     const newOwner = {
         person: req.body.person,
         collector: req.body.collector,
@@ -30,13 +29,9 @@ const addNewOwner = async (req, res) => {
     } else {
         res.status(500).json(response.error || 'Some error occurred while creating the contact.');
     }
-} catch{
-        res.status(500).json('a problem occured')
-    }
 }
 
 const updateOwner = async (req, res) => {
-    try{
     const userId = new ObjectId(req.params.id);
     // be aware of updateOne if you only want to update specific fields
     const contact = {
@@ -54,13 +49,9 @@ const updateOwner = async (req, res) => {
     } else {
     res.status(500).json(response.error || 'Some error occurred while updating the contact.');
     }
-} catch{
-    res.status(500).json('a problem occured')
-}
 };
 
 const deleteOwner = async (req, res) => {
-    try{
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('owner').deleteOne({ _id: userId }, true);
     console.log(response);
@@ -69,9 +60,6 @@ const deleteOwner = async (req, res) => {
     } else {
     res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
     }
-}catch {
-    res.status(500).json('a problem occured')
-}
 };
 
 module.exports = {

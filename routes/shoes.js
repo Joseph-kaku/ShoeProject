@@ -4,11 +4,11 @@ const regValidate = require('../utilities/validate')
 
 routes.get('/', controllers.getAllShoes)
 routes.post('/', 
-regValidate.addNewShoeRules(),
+regValidate.shoeRules(),
 regValidate.checkShoeData,
 controllers.addNewShoe);
 routes.get('/:id',
-regValidate.addNewShoeRules(),
+regValidate.shoeRules(),
 regValidate.checkShoeData, 
 controllers.getSingleShoe);
 routes.put('/:id', controllers.updateShoe)

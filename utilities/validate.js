@@ -2,7 +2,7 @@ const {body, validationResult} = require ('express-validator');
 const validate = {}
 
 // ADD NEW SHOE VALIDATION
-validate.addNewShoeRules = () => {
+validate.shoeRules = () => {
     return [
         // brand name is required and must be a string
         body("brand")
@@ -71,7 +71,7 @@ validate.checkShoeData = async (req, res, next) => {
 
 
 // ADD NEW OWNER VALIDATION
-validate.addNewOwnerRules = () => {
+validate.ownerRules = () => {
     return [
         // Name is required and must be a string
         body('person')

@@ -4,12 +4,12 @@ const regValidate = require('../utilities/validate')
 
 routes.get('/', controllers.getAllOwners)
 routes.post('/', 
-regValidate.addNewOwnerRules(), 
+regValidate.ownerRules(), 
 regValidate.checkOwnerData,
 controllers.addNewOwner)
 routes.get('/:id', controllers.getSingleOwner)
 routes.put('/:id',
-regValidate.addNewOwnerRules(), 
+regValidate.ownerRules(), 
 regValidate.checkOwnerData, 
 controllers.updateOwner)
 routes.delete('/:id', controllers.deleteOwner)

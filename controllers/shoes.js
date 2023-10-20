@@ -20,7 +20,6 @@ const getSingleShoe = async (req, res) => {
 };
 
 const addNewShoe = async (req, res) => {
-    try{
     const newShoe = {
         brand: req.body.brand,
         model: req.body.model,
@@ -37,13 +36,9 @@ const addNewShoe = async (req, res) => {
     } else {
         res.status(500).json(response.error || 'Some error occurred while creating the contact.');
     }
-}catch {
-    res.status(500).json('a problem occured')
-}
 }
 
 const updateShoe = async (req, res) => {
-    try{
     const userId = new ObjectId(req.params.id);
     // be aware of updateOne if you only want to update specific fields
     const contact = {
@@ -67,13 +62,9 @@ const updateShoe = async (req, res) => {
     } else {
     res.status(500).json(response.error || 'Some error occurred while updating the contact.');
     }
-}catch {
-    res.status(500).json('a problem occured')
-}
 };
 
 const deleteShoe = async (req, res) => {
-    try{
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('shoes').deleteOne({ _id: userId }, true);
     console.log(response);
@@ -82,9 +73,6 @@ const deleteShoe = async (req, res) => {
     } else {
     res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
     }
-}catch{
-    res.status(500).json('a problem occured')
-}
 };
 
 module.exports = {
