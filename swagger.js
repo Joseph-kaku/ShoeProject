@@ -5,8 +5,8 @@ info: {
     title: 'My API',
     description: 'Description',
 },
-host: ('shoeproject.onrender.com'),
-schemes: ['https'],
+host: process.env.swaggerURL,
+schemes: ['http','https'],
 };
 
 const outputFile = './swagger-output.json';
