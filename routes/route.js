@@ -5,8 +5,7 @@ const { auth } = require('express-openid-connect');
 
 const { requiresAuth } = require('express-openid-connect');
 
-routes.use('/api-docs', swaggerUi.serve);
-routes.get('/api-docs', swaggerUi.setup(swaggerDocument));
+
 
 const config = {
     authRequired: false,
@@ -32,5 +31,8 @@ routes.get('/profile', requiresAuth(), (req, res) => {
 // routes.use('/', require())
 routes.use('/shoes', requiresAuth(), require('./shoes'))
 routes.use('/owners',requiresAuth(), require('./owners'))
+
+routes.use('/api-docs', requiresAuth(), swaggerUi.serve);
+routes.get('/api-docs', requiresAuth(), swaggerUi.setup(swaggerDocument));
 
 module.exports = routes
