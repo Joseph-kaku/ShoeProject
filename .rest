@@ -92,10 +92,10 @@ Content-Type: application/json
     "brand": "Doc Martens",
     "model": "Black Smooth",
     "color": "Black",
-    "secondary_color": "Yellow",
-    "size": "10",
-    "lace_color": "Black",
-    "price": "$150.00",
+    "secondary_color": "Darker Black",
+    "size": "10.5",
+    "lace_color": "Yellow",
+    "price": "$120.00",
     "logo_name": "Air Wair"
 }
 

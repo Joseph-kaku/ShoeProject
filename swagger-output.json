@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My API",
+    "title": "Shoes API",
     "description": "Description",
     "version": "1.0.0"
   },
@@ -11,16 +11,6 @@
     "https"
   ],
   "paths": {
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/": {
       "get": {
         "description": "",
@@ -41,74 +31,46 @@
         }
       }
     },
-    "/shoes/": {
+    "/api-docs": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "responses": {
           "200": {
             "description": "OK"
           }
         }
+      }
+    },
+    "/shoes/": {
+      "get": {
+        "tags": [
+          "Shoes"
+        ],
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
       },
       "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "brand": {
-                  "example": "any"
-                },
-                "model": {
-                  "example": "any"
-                },
-                "color": {
-                  "example": "any"
-                },
-                "secondary_color": {
-                  "example": "any"
-                },
-                "size": {
-                  "example": "any"
-                },
-                "lace_color": {
-                  "example": "any"
-                },
-                "price": {
-                  "example": "any"
-                },
-                "logo_name": {
-                  "example": "any"
-                }
-              }
-            }
-          }
+        "tags": [
+          "Shoes"
         ],
+        "description": "",
         "responses": {
-          "201": {
-            "description": "Created"
-          },
           "400": {
             "description": "Bad Request"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
     },
     "/shoes/{id}": {
       "get": {
-        "description": "",
-        "produces": [
-          "application/json"
+        "tags": [
+          "Shoes"
         ],
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -118,12 +80,15 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "put": {
+        "tags": [
+          "Shoes"
+        ],
         "description": "",
         "parameters": [
           {
@@ -131,54 +96,18 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "brand": {
-                  "example": "any"
-                },
-                "model": {
-                  "example": "any"
-                },
-                "color": {
-                  "example": "any"
-                },
-                "secondary_color": {
-                  "example": "any"
-                },
-                "size": {
-                  "example": "any"
-                },
-                "lace_color": {
-                  "example": "any"
-                },
-                "price": {
-                  "example": "any"
-                },
-                "logo_name": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
           "400": {
             "description": "Bad Request"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
+        "tags": [
+          "Shoes"
+        ],
         "description": "",
         "parameters": [
           {
@@ -189,17 +118,17 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/owners/": {
       "get": {
+        "tags": [
+          "Owners"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -211,43 +140,23 @@
         }
       },
       "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "person": {
-                  "example": "any"
-                },
-                "collector": {
-                  "example": "any"
-                }
-              }
-            }
-          }
+        "tags": [
+          "Owners"
         ],
+        "description": "",
         "responses": {
-          "201": {
-            "description": "Created"
-          },
           "400": {
             "description": "Bad Request"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
     },
     "/owners/{id}": {
       "get": {
-        "description": "",
-        "produces": [
-          "application/json"
+        "tags": [
+          "Owners"
         ],
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -257,12 +166,15 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "put": {
+        "tags": [
+          "Owners"
+        ],
         "description": "",
         "parameters": [
           {
@@ -270,36 +182,18 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "person": {
-                  "example": "any"
-                },
-                "collector": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
           "400": {
             "description": "Bad Request"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
+        "tags": [
+          "Owners"
+        ],
         "description": "",
         "parameters": [
           {
@@ -310,11 +204,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       }

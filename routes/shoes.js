@@ -2,16 +2,39 @@ const routes = require('express').Router();
 const controllers = require('../controllers/shoes')
 const regValidate = require('../utilities/validate')
 
-routes.get('/', controllers.getAllShoes)
-routes.post('/', 
-regValidate.shoeRules(),
-regValidate.checkShoeData,
-controllers.addNewShoe);
-routes.get('/:id', controllers.getSingleShoe);
-routes.put('/:id',
-regValidate.shoeRules(),
-regValidate.checkShoeData,
-controllers.updateShoe)
-routes.delete('/:id', controllers.deleteShoe)
+routes.get('/', (req, res) => {
+/*
+#swagger.tags = ['Shoes']
+*/
+    controllers.getAllShoes
+});
+
+routes.post('/', regValidate.shoeRules(), regValidate.checkShoeData, (req, res) => {
+/*
+#swagger.tags = ['Shoes']
+*/
+    controllers.addNewShoe
+});
+
+routes.get('/:id', (req, res) => {
+/*
+#swagger.tags = ['Shoes']
+*/
+    controllers.getSingleShoe
+}); 
+
+routes.put('/:id', regValidate.shoeRules(), regValidate.checkShoeData, (req, res) => {
+/*
+#swagger.tags = ['Shoes']
+*/
+    controllers.updateShoe
+});
+
+routes.delete('/:id', (req, res) => {
+/*
+#swagger.tags = ['Shoes']
+*/
+    controllers.deleteShoe
+});
 
 module.exports = routes
