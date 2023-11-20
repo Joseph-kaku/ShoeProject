@@ -13,27 +13,27 @@ routes.post('/', regValidate.ownerRules(), regValidate.checkOwnerData, (req, res
 /*
 #swagger.tags = ['Owners']
 */
-controllers.addNewOwner
+controllers.addNewOwner(req, res);
 });
 
 routes.get('/:id', (req, res) => {
 /*
 #swagger.tags = ['Owners']
 */
-    controllers.getSingleOwner
+    controllers.getSingleOwner(req, res);
 });
 routes.put('/:id', regValidate.ownerRules(), regValidate.checkOwnerData, (req, res) => {
 /*
 #swagger.tags = ['Owners']
 */
-controllers.updateOwner
+controllers.updateOwner(req, res);
 });
 
 routes.delete('/:id', (req, res) => {
 /*
 #swagger.tags = ['Owners']
 */
-controllers.deleteOwner
+controllers.deleteOwner(req, res);
 });
 
 module.exports = routes

@@ -6,35 +6,35 @@ routes.get('/', (req, res) => {
 /*
 #swagger.tags = ['Shoes']
 */
-    controllers.getAllShoes
+    controllers.getAllShoes(req, res);
 });
 
 routes.post('/', regValidate.shoeRules(), regValidate.checkShoeData, (req, res) => {
 /*
 #swagger.tags = ['Shoes']
 */
-    controllers.addNewShoe
+    controllers.addNewShoe(req, res);
 });
 
 routes.get('/:id', (req, res) => {
 /*
 #swagger.tags = ['Shoes']
 */
-    controllers.getSingleShoe
+    controllers.getSingleShoe(req, res);
 }); 
 
 routes.put('/:id', regValidate.shoeRules(), regValidate.checkShoeData, (req, res) => {
 /*
 #swagger.tags = ['Shoes']
 */
-    controllers.updateShoe
+    controllers.updateShoe(req, res);
 });
 
 routes.delete('/:id', (req, res) => {
 /*
 #swagger.tags = ['Shoes']
 */
-    controllers.deleteShoe
+    controllers.deleteShoe(req, res);
 });
 
 module.exports = routes
