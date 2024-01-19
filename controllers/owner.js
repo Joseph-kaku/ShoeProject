@@ -28,7 +28,7 @@ const addNewOwner = async (req, res) => {
         res.status(201).json(response);
     } else {
         res.status(500).json(response.error || 'Some error occurred while creating the contact.');
-    }
+    } 
 }
 
 const updateOwner = async (req, res) => {

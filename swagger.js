@@ -2,7 +2,7 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
 info: {
-    title: 'Shoes API',
+    title: 'SHOES API',
     description: 'Description',
 },
 host: 'shoeproject.onrender.com',
